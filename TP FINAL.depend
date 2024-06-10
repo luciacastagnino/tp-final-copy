@@ -1,0 +1,530 @@
+# depslib dependency file v1.0
+1716651033 source:c:\users\brend\desktop\utn\tp final\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1716589156 c:\users\brend\desktop\utn\tp final\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1716651018 c:\users\brend\desktop\utn\tp final\empleados.h
+
+1716651746 c:\users\brend\desktop\utn\tp final\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1716651180 source:c:\users\brend\desktop\utn\tp final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"ordenamientos.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1716651735 c:\users\brend\desktop\utn\tp final\menu.h
+
+1716589156 source:c:\users\brend\desktop\utn\tp final\pila.c
+	"pila.h"
+
+1716650294 c:\users\brend\desktop\utn\tp final\clientes.h
+	"viajes.h"
+
+1716649450 c:\users\brend\desktop\utn\tp final\viajes.h
+
+1716650282 source:c:\users\brend\desktop\utn\tp final\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1716651707 source:c:\users\brend\desktop\utn\tp final\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+
+1716652097 c:\users\brend\desktop\utn\tp final\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1716651752 source:c:\users\brend\desktop\utn\tp final\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"ventas.h"
+	"viajes.h"
+
+1716652023 source:c:\users\brend\desktop\utn\tp final\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1716651523 source:c:\users\brend\desktop\utn\tp final\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\calendario.c
+	"calendario.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\calendario.h
+	"viajes.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\clientes.h
+	"viajes.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\viajes.h
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"viajes.h"
+	"ventas.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\empleados.h
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1717867460 source:c:\users\acer\desktop\utn\tp-final-prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1717867460 c:\users\acer\desktop\utn\tp-final-prog\menu.h
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+	"calendario.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\pila.c
+	"pila.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
+1717865708 source:c:\users\meli\desktop\tp-final-prog\calendario.c
+	"calendario.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+
+1717865708 c:\users\meli\desktop\tp-final-prog\calendario.h
+	"viajes.h"
+
+1717865708 source:c:\users\meli\desktop\tp-final-prog\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1717865708 c:\users\meli\desktop\tp-final-prog\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1717865708 c:\users\meli\desktop\tp-final-prog\empleados.h
+
+1717865708 c:\users\meli\desktop\tp-final-prog\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"viajes.h"
+	"ventas.h"
+
+1717866644 c:\users\meli\desktop\tp-final-prog\clientes.h
+	"viajes.h"
+
+1717866644 c:\users\meli\desktop\tp-final-prog\viajes.h
+
+1717865708 c:\users\meli\desktop\tp-final-prog\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+
+1717865708 source:c:\users\meli\desktop\tp-final-prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1717865708 c:\users\meli\desktop\tp-final-prog\menu.h
+
+1717866728 source:c:\users\meli\desktop\tp-final-prog\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+	"calendario.h"
+
+1717865708 source:c:\users\meli\desktop\tp-final-prog\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+
+1717865708 source:c:\users\meli\desktop\tp-final-prog\pila.c
+	"pila.h"
+
+1717865708 source:c:\users\meli\desktop\tp-final-prog\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1717866796 source:c:\users\meli\desktop\tp-final-prog\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
+1717866644 source:c:\users\meli\desktop\tp-final-prog\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\calendario.c
+	"calendario.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\calendario.h
+	"viajes.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\menu.h
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\empleados.h
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"viajes.h"
+	"ventas.h"
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.h
+	"viajes.h"
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.h
+
+1717884892 c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+	"calendario.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\pila.c
+	"pila.h"
+
+1717885040 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
+1717884892 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1717887716 source:c:\users\brend\onedrive\escritorio\utn\tp-final-prog\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\calendario.c
+	"calendario.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog - copia\calendario.h
+	"viajes.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog - copia\viajes.h
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog - copia\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1718032735 c:\users\acer\desktop\utn\tp-final-prog - copia\clientes.h
+	"viajes.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog - copia\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"viajes.h"
+	"ventas.h"
+
+1718032735 c:\users\acer\desktop\utn\tp-final-prog - copia\empleados.h
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog - copia\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\pila.c
+	"pila.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1718002752 source:c:\users\acer\desktop\utn\tp-final-prog - copia\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
+1718052103 source:c:\users\acer\desktop\utn\tp-final-prog - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+	"home.h"
+	"admin.h"
+
+1718002752 c:\users\acer\desktop\utn\tp-final-prog - copia\menu.h
+
+1718051413 c:\users\acer\desktop\utn\tp-final-prog - copia\home.h
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"admin.h"
+
+1718052057 c:\users\acer\desktop\utn\tp-final-prog - copia\admin.h
+
+1718033971 source:c:\users\acer\desktop\utn\tp-final-prog - copia\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"admin.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+	"calendario.h"
+
