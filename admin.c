@@ -5,24 +5,7 @@
 #include "empleados.h"
 #include "ordenamientos.h"
 #include "admin.h"
-
-// validacion inicio sesion/registro
-
-void lenghtContrasenia(char contrasenia){
-
-    if(srtlen(contrasenia)<8){
-        return 0;
-    }
-    return 1;
-}
-
-void validacionContrasenia (char contrasenia[], char contrasenia2[]){
-
-    if(strcmp(contrasenia, contrasenia2)==0){
-        return 1;
-    }
-    return 0;
-}
+#include "validaciones.h"
 
 /// inicio de sesion ////////////////////////////////////////////
 

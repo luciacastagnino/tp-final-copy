@@ -528,3 +528,125 @@
 	"ordenamientos.h"
 	"calendario.h"
 
+1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\calendario.c
+	"calendario.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\calendario.h
+	"viajes.h"
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\viajes.h
+
+1718063859 source:c:\users\acer\desktop\utn\tp-final-copy\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+	"validaciones.h"
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1718062856 c:\users\acer\desktop\utn\tp-final-copy\clientes.h
+	"viajes.h"
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\ordenamientos.h
+	"empleados.h"
+	"clientes.h"
+	"viajes.h"
+	"ventas.h"
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\empleados.h
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\ventas.h
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+
+1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"empleados.h"
+	"ordenamientos.h"
+
+1718062869 source:c:\users\acer\desktop\utn\tp-final-copy\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"admin.h"
+	"clientes.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+	"ordenamientos.h"
+	"calendario.h"
+
+1718054537 c:\users\acer\desktop\utn\tp-final-copy\admin.h
+
+1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\ordenamientos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"clientes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"viajes.h"
+	"ventas.h"
+
+1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\pila.c
+	"pila.h"
+
+1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\ventas.c
+	"ventas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"viajes.h"
+	"clientes.h"
+	"empleados.h"
+	"ordenamientos.h"
+
+1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\viajes.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+	<string.h>
+	"viajes.h"
+	"ordenamientos.h"
+
+1718063391 source:c:\users\acer\desktop\utn\tp-final-copy\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"pila.h"
+	"menu.h"
+	"empleados.h"
+	"clientes.h"
+	"ventas.h"
+	"viajes.h"
+	"home.h"
+	"admin.h"
+	"validaciones.h"
+
+1718052985 c:\users\acer\desktop\utn\tp-final-copy\menu.h
+
+1718062370 c:\users\acer\desktop\utn\tp-final-copy\home.h
+	<strings.h>
+	"clientes.h"
+	"viajes.h"
+	"ordenamientos.h"
+	"empleados.h"
+	"admin.h"
+
+1718063847 c:\users\acer\desktop\utn\tp-final-copy\validaciones.h
+

@@ -55,8 +55,10 @@ void mostrarDomicilio(stDomicilio A);
 stDomicilio modificarDomicilio(stDomicilio A);
 
 ///PROTOTIPOS ARCHIVOS/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void cargarArchivoCliente();
+int generarIdCliente();
+void registrarCliente();
+stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[]);
+int iniciarSesionCliente();
 void encontrarClienteN(char N[30]);
 void encontrarClienteDni(char D[10]);
 void MostrarArregloCliente(stCliente A[], int validos);

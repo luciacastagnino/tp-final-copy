@@ -96,44 +96,6 @@ stEmpleado iniciarSesionEmpleado()
 
 //cliente
 
-stCliente arBuscarUsuarioLoginCliente (char dni[], char contrasenia[])
-{
-    FILE* buf = fopen(archCliente, "rb");
-    int flag = 0;
-    stCliente A;
-    if(buf)
-    {
-        while(flag == 0 && fread(&A, sizeof(stCliente), 1, buf)>0)
-        {
-            if(strcmpi(A.dni, dni)==0 && strcmp(A.contrasenia, contrasenia)==0)
-            {
-                flag=1;
-            }
-        }
-        fclose(buf);
-    }
-    if(flag==0)
-    {
-        A.estado = 0;
-    }
-    return A;
-}
-
-stCliente iniciarSesionCliente()
-{
-    stCliente cliente;
-    char dni[10];
-    char contrasenia[20];
-
-    printf("Ingrese DNI \n");
-    fflush(stdin);
-    gets(dni);
-    printf("Ingrese contrasenia \n");
-    fflush(stdin);
-    gets(contrasenia);
-    cliente = arBuscarUsuarioLoginCliente (dni, contrasenia);
-    return cliente;
-}
 
 /// registro
 

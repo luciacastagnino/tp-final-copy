@@ -736,7 +736,7 @@ void menuClientes()
 
         case 1:
         {
-            cargarArchivoCliente();
+            //cargarArchivoCliente();
             system("pause");
             system("cls");
             mostrarOrdenAlfabCActivo();

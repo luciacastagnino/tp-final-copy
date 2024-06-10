@@ -5,6 +5,8 @@
 #include "clientes.h"
 #include "viajes.h"
 #include "ordenamientos.h"
+#include "validaciones.h"
+
 
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -289,6 +291,11 @@ stCliente cargarCliente()
     fflush(stdin);
     gets(A.nYa);
 
+    printf("Ingrese la contrasenia:\n");
+    fflush(stdin);
+    gets(A.contrasenia);
+
+
     printf("Ingrese la fecha de nacimiento del cliente\n");
     fflush(stdin);
     gets(A.fechaNac);
@@ -326,34 +333,103 @@ stCliente cargarCliente()
     return A;
 }
 
-void cargarArchivoCliente()
+// REGISTRO CLIENTE
+/*
+int generarIdCliente()
 {
-    stCliente A;
-    char control = 's';
-
     FILE* buf;
-    buf = fopen(archCliente, "ab");
+    buf = fopen(archCliente,"rb");
+    stCliente A;
 
-    if(buf){
-
-        while(control == 's')
-        {
-            A = cargarCliente();
-
-            fwrite(&A, sizeof(stCliente), 1, buf);
-
-            printf("¿Quiere seguir cargando clientes?\n");
-            fflush(stdin);
-            scanf("%c", &control);
-        }
-
+    if(buf)
+    {
+        fseek(buf, sizeof(stCliente)*(-1), SEEK_END);
+        fread(&A, sizeof(stCliente), 1, buf);
         fclose(buf);
+    }
+    return A.;
+}*/
 
+void registrarCliente() {
+    stCliente A;
+    FILE *buf= fopen(archCliente, "ab");
+
+    if (!buf) {
+        printf("Error al abrir el archivo de clientes.\n");
+        return;
+    }
+
+    A=cargarCliente();
+
+    fwrite(&A, sizeof(stCliente), 1, buf);
+    fclose(buf);
+
+    printf("Cliente registrado con éxito.\n");
+}
+
+stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[])
+{
+    FILE* buf = fopen(archCliente, "rb");
+    int flag=0;
+    stCliente A;
+    if(buf)
+    {
+        while(flag == 0 && fread(&A, sizeof(stCliente), 1, buf)>0)
+        {
+            if(strcmpi(A.dni, dni)==0 && strcmp(A.contrasenia, contrasenia)==0)
+            {
+                flag=1;
+            }
+        }
+        fclose(buf);
+    }
+    if(flag==0)
+    {
+        A.estado = 0;
+    }
+    return A;
+}
+
+int iniciarSesionCliente() {
+    char dni[10];
+    char contrasenia[20];
+    char contrasenia2[20];
+    stCliente A;
+    int flag=0, validacion=0;
+    FILE *buf;
+    buf = fopen(archCliente, "rb");
+
+    if (!buf) {
+        printf("Error al abrir el archivo de clientes.\n");
+    }
+
+    printf("Ingrese el DNI:\n");
+    fflush(stdin);
+    gets(A.dni);
+    printf("Ingrese contrasenia:\n");
+    fflush(stdin);
+    gets(A.contrasenia);
+    printf("Vuelva a ingresar la contrasenia:\n");
+    validacion=validacionContrasenia(contrasenia, contrasenia2);
+    while(validacion!=1){
+        if(validacion==0){
+        printf("Contrasenia incorrecta, vuelva a ingresarla.\n");
+    }
+    }
+
+    A=busquedaClienteInicioSesion(dni, contrasenia);
+
+    if(A.dni!=0){
+        printf("Inicio de sesion exitoso.\n");
+        flag=1;
 
     }else{
-        printf("El archivo no pudo abrirse\n");
+        printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
     }
+
+    return flag;
 }
+
 ///Mostrar Cliente///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void mostrarCliente(stCliente A)

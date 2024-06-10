@@ -8,12 +8,12 @@
 #include "admin.h"
 
 // iniciar sesion
-
+/*
 stEmpleado arBuscarUsuarioLoginEmpleado (char dni[], char contrasenia[]);
 stEmpleado iniciarSesionEmpleado();
 stCliente arBuscarUsuarioLoginCliente (char dni[], char contrasenia[]);
 stCliente iniciarSesionCliente();
-
+*/
 //registro
 
 

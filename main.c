@@ -9,6 +9,7 @@
 #include "viajes.h"
 #include "home.h"
 #include "admin.h"
+#include "validaciones.h"
 
 int main()
 {
@@ -66,7 +67,12 @@ int main()
             }else if(opcion==2){
                 //empleado=iniciarSesionEmpleado();
             }else if(opcion==3){
-                //cliente=iniciarSesionCliente();
+                int inicioSesion=iniciarSesionCliente();
+                if(inicioSesion==1){
+                    printf("Bienvenido/a %s.\n", empleado.nYa);
+                    menuClientes();
+                }
+
             }
 
             break;
@@ -81,10 +87,14 @@ int main()
             int option;
             scanf("%i", &option);
             if(option==1){
-                registroAdministrador();
+                registroAdministrador;
+            }else if(option==3){
+                registrarCliente();
             }
             break;
-        }}}while(op!=4);
+        }
+        }}while(op!=4);
 
     return 0;
 }
+

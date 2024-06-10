@@ -26,5 +26,4 @@ void cargarArchivoAdmin();
 void mostrarAdmin (stAdmin A);
 
 
-
 #endif // ADMIN_H_INCLUDED
