@@ -578,7 +578,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1718118058 source:c:\users\acer\desktop\utn\tp-final-copy\menu.c
+1718127142 source:c:\users\acer\desktop\utn\tp-final-copy\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -591,7 +591,7 @@
 	"ordenamientos.h"
 	"calendario.h"
 
-1718121044 c:\users\acer\desktop\utn\tp-final-copy\admin.h
+1718124065 c:\users\acer\desktop\utn\tp-final-copy\admin.h
 
 1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\ordenamientos.c
 	<stdio.h>
@@ -624,7 +624,7 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1718121003 source:c:\users\acer\desktop\utn\tp-final-copy\main.c
+1718126984 source:c:\users\acer\desktop\utn\tp-final-copy\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -654,7 +654,7 @@
 	"validaciones.h"
 	"string.h"
 
-1718121298 source:c:\users\acer\desktop\utn\tp-final-copy\admin.c
+1718123365 source:c:\users\acer\desktop\utn\tp-final-copy\admin.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"

@@ -65,23 +65,6 @@ stAdmin cargarAdmin(){
     return A;
 }
 
-// REGISTRO CLIENTE
-/*
-int generarIdCliente()
-{
-    FILE* buf;
-    buf = fopen(archCliente,"rb");
-    stCliente A;
-
-    if(buf)
-    {
-        fseek(buf, sizeof(stCliente)*(-1), SEEK_END);
-        fread(&A, sizeof(stCliente), 1, buf);
-        fclose(buf);
-    }
-    return A.;
-}*/
-
 void registrarAdmin() {
 
     FILE *buf;

@@ -13,13 +13,17 @@ typedef struct{
     int estado;
 }stAdmin;
 
-stAdmin cargarContraseniaAdmin(stAdmin A){
-stAdmin cargarAdmin();
-void registrarAdmin();
+// inicio de sesion
 
-stAdmin busquedaAdminInicioSesion (char dni[], char contrasenia[]);
+stAdmin arBuscarUsuarioLoginAdmin (char dni[], char contrasenia[]);
 stAdmin iniciarSesionAdmin();
-void mostrarAdmin(stAdmin A);
-void mostrarArchivoAdmin();
+
+// registro
+
+void registroAdministrador();
+stAdmin cargarAdmin();
+void cargarArchivoAdmin();
+void mostrarAdmin (stAdmin A);
+
 
 #endif // ADMIN_H_INCLUDED
