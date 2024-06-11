@@ -141,7 +141,7 @@ stAdmin iniciarSesionAdmin() {
     return A;
 }
 
-///Mostrar Cliente///////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Mostrar Admin ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void mostrarAdmin(stAdmin A)
 {
@@ -150,7 +150,7 @@ void mostrarAdmin(stAdmin A)
     printf("\n");
 }
 
-///Mostrar archivo Clientes/////////////////
+/// Mostrar archivo admin /////////////////
 
 void mostrarArchivoAdmin()
 {
@@ -171,4 +171,107 @@ void mostrarArchivoAdmin()
     {
         printf("El archivo no pudo abrirse\n");
     }
+}
+
+void mostrarPerfilAdmin (char nYa[]){
+
+    FILE* buf;
+    buf=fopen(archAdmin, "rb");
+    stAdmin A;
+
+    if(buf){
+        while(fread(&A, sizeof(stAdmin), 1, buf)>0){
+            if(strcmp(A.nYa, nYa)==0){
+                mostrarAdmin(A);
+            }
+        }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
+    }
+}
+
+/// MODIFICAR ADMIN //////////////////////////////////////////////////////////////
+
+void modificarAdmin (char nYa[]){
+
+    FILE* buf;
+    buf=fopen(archAdmin, "r+b");
+    stAdmin A;
+    int op=1, opcion=0, flag=0;
+
+    if(buf){
+            while(fread(&A, sizeof(stAdmin), 1, buf)>0){
+                if(strcmp(A.nYa, nYa)==0){
+                    flag=1;
+                }
+            if(flag==1){
+                printf("Que desea modificar?\n");
+                printf("1. Nombre y apellido.\n");
+                printf("2. DNI.\n");
+                printf("3. Contrasenia.\n");
+                scanf("%i", &opcion);
+                switch(opcion){
+            case 1:
+                printf("Ingrese el nuevo nombre y apellido del administrador:\n");
+                fflush(stdin);
+                gets(A.nYa);
+                break;
+            case 2:
+                printf("Ingrese el nuevo DNI del administrador:\n");
+                fflush(stdin);
+                gets(A.dni);
+                break;
+            case 3:
+                printf("Ingrese la nueva contrasenia:\n");
+                fflush(stdin);
+                char contrasenia[30];
+                char contrasenia2[30];
+                int flagC=0;
+                gets(contrasenia);
+                flagC=lenghtContrasenia(contrasenia);
+
+                while(flagC!=1)
+                {
+                printf("La contrasenia es muy corta, ingrese una contrasenia mas larga.\n");
+                fflush(stdin);
+                gets(contrasenia);
+                flagC=lenghtContrasenia(contrasenia);
+                }
+                printf("Vuelva a ingresar su contrasenia \n");
+                fflush(stdin);
+                gets(contrasenia2);
+
+                int validacion=0;
+
+                validacion=validacionContrasenia(contrasenia, contrasenia2);
+
+                while(validacion!=1){
+                printf("Las contrasenias no coinciden, ingrese nuevamente la contrasenia\n");
+                fflush(stdin);
+                gets(contrasenia);
+                printf("Vuelva a ingresar su contrasenia \n");
+                fflush(stdin);
+                gets(contrasenia2);
+                validacion=validacionContrasenia(contrasenia, contrasenia2);
+                }
+                strcpy(A.contrasenia, contrasenia);
+                break;
+            default:
+                printf("No existe la opcion.\n");
+                break;
+                }}
+
+                fseek(buf, -1*sizeof(stAdmin), SEEK_CUR);
+                fwrite(&A, sizeof(stAdmin), 1, buf);
+            }
+            fclose(buf);
+    }else{
+        printf("No se pudo modificar el usuario.\n");
+    }
+
+    if(flag==0){
+        printf("No se encontro el usuario.\n");
+    }
+
 }

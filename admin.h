@@ -25,5 +25,12 @@ stAdmin cargarAdmin();
 void cargarArchivoAdmin();
 void mostrarAdmin (stAdmin A);
 
+// perfil
+
+void mostrarPerfilAdmin (char nYa[]);
+
+// modificacion
+
+void modificarAdmin (char nYa[]);
 
 #endif // ADMIN_H_INCLUDED

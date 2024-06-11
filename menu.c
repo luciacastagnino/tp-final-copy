@@ -17,9 +17,10 @@ void menuAdmin(){
     int op=0;
 
     do{
+    printf("MENU PRINCIPAL:\n\n");
     printf("1. ABMCL\n");
     printf("2. Registro\n");
-    printf("3. Modificar perfil\n");
+    printf("3. Perfil\n");
     printf("4. Atras\n");
     scanf("%i", &op);
     switch(op){
@@ -27,9 +28,10 @@ case 1:
     menuABMCL();
     break;
 case 2:
-    menuRegistro();
+    menuRegistroAdmin();
     break;
 case 3:
+    menuPerfilAdmin();
     break;
 case 4:
     system("cls");
@@ -45,8 +47,9 @@ void menuABMCL (){
 
     int op;
     do{
-    printf("MENU ABMCL\n");
-    printf("0. Administradores\n");
+    system("pause");
+    system("cls");
+    printf("MENU ABMCL\n\n");
     printf("1. Empleados\n");
     printf("2. Clientes\n");
     printf("3. Viajes\n");
@@ -54,9 +57,6 @@ void menuABMCL (){
     printf("5. Atras\n");
     scanf("%i", &op);
     switch(op){
-case 0:
-    //menuABMCLadmin();
-    break;
 case 1:
     menuABMCLempleado();
     break;
@@ -203,7 +203,6 @@ case 5:
                 }
     break;
 case 6:
-            //int opcion;
             printf("Si desea filtrar el/los empleado/s por el puesto Ingrese 1.\n\n");
             printf("Si desea filtrar el/los empleado/s por el estado Ingrese 2.\n\n");
             fflush(stdin);
@@ -799,26 +798,56 @@ default:
 
 /// MENU REGISTRO ADMIN ///////////////////////////////////////////////////////////////////////////
 
-void menuRegistro(){
+void menuRegistroAdmin(){
 
     stAdmin admin;
 
     int op;
     do{
+    system("pause");
+    system("cls");
+    printf("MENU REGISTRO OTRO ADMINISTRADOR:\n\n");
     printf("1. Agregar administrador.\n");
     printf("2. Atras.\n");
     scanf("%i", &op);
     switch(op){
 case 1:
-    //admin=agregarAdministrador();
-    //cargarArchivoAdmin();
-
+    registrarAdmin();
     break;
 case 2:
+    system("cls");
     break;
     }}while(op!=2);
-
 }
 
+/// MENU MODIFICAR PERFIL ADMIN ////////////////////////////////////////////////////////////////////
+
+void menuPerfilAdmin(){
+
+    int op;
+    stAdmin A;
+    do{
+    system("pause");
+    system("cls");
+    printf("MENU PERFIL:\n\n");
+    printf("1. Ver perfil.\n");
+    printf("2. Modificar perfil.\n");
+    printf("3. Atras.\n");
+    scanf("%i", &op);
+    switch(op){
+case 1:
+    mostrarPerfilAdmin(A.nYa);
+    //no funciona
+    break;
+case 2:
+    modificarAdmin(A.nYa);
+    //no funciona
+    break;
+case 3:
+    system("cls");
+    break;
+    }}while(op!=3);
+
+}
 
 
