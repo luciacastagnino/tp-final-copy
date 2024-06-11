@@ -10,8 +10,95 @@
 #include "ordenamientos.h"
 #include "calendario.h"
 
+/// MENU ADMIN ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-///MENU EMPLEADOS////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void menuAdmin(){
+
+    int op;
+
+    do{
+    printf("1. ABMCL\n");
+    printf("2. Registro\n");
+    printf("3. Modificar perfil\n");
+    printf("4. Atras\n");
+    scanf("%i", &op);
+    switch(op){
+case 1:
+    menuABMCLadmin();
+    break;
+case 2:
+    menuRegistro();
+    break;
+case 3:
+    break;
+case 4:
+    system("cls");
+    break;
+    }
+    }while(op!=4);
+
+}
+
+void menuABMCLadmin (){
+
+    int op;
+    do{
+    printf("0. Administradores\n");
+    printf("1. Empleados\n");
+    printf("2. Clientes\n");
+    printf("3. Viajes\n");
+    printf("4. Ventas\n");
+    printf("5. Atras\n");
+    switch(op){
+case 0:
+
+    break;
+case 1:
+
+    break;
+case 2:
+
+    break;
+case 3:
+
+    break;
+case 4:
+
+    break;
+case 5:
+    system("cls");
+    break;
+default:
+    printf("Opcion incorrecta\n");
+    break;
+    }}while(op!=5);
+
+}
+
+void menuABMCLempleado()
+
+void menuRegistro(){
+
+    stAdmin admin;
+
+    int op;
+    do{
+    printf("1. Agregar administrador.\n");
+    printf("2. Atras.\n");
+    scanf("%i", &op);
+    switch(op){
+case 1:
+    //admin=agregarAdministrador();
+    //cargarArchivoAdmin();
+
+    break;
+case 2:
+    break;
+    }}while(op!=2);
+
+}
+
+/// menu empleados
 
 void menuEmpleados()
 {
@@ -199,85 +286,6 @@ void menuEmpleados()
     default:
         printf("La opcion no existe.\n");
     }
-}
-
-/// MENU ADMIN /////////////////////////////////////////////////////////////////////////
-
-void menuAdmin(){
-
-    int op;
-
-    do{
-    printf("1. ABM\n");
-    printf("2. Registro\n");
-    printf("3. Modificar perfil\n");
-    printf("4. Atras\n");
-    scanf("%i", &op);
-    switch(op){
-case 1:
-    //menuabm
-    break;
-case 2:
-    menuRegistro();
-    break;
-case 3:
-    break;
-case 4:
-    system("cls");
-    break;
-    }
-    }while(op!=4);
-
-}
-
-void menuAMBadmin (){
-
-    int op;
-    do{
-    printf("1. Empleados\n");
-    printf("2. Clientes\n");
-    printf("3. Viajes\n");
-    printf("4. Ventas\n");
-    printf("4. Atras\n");
-    switch(op){
-case 1:
-
-    break;
-case 2:
-    break;
-case 3:
-    break;
-case 4:
-    break;
-case 5:
-    system("cls");
-    break;
-default:
-    printf("Opcion incorrecta\n");
-    break;
-    }}while(op!=5);
-
-}
-
-void menuRegistro(){
-
-    stAdmin admin;
-
-    int op;
-    do{
-    printf("1. Agregar administrador.\n");
-    printf("2. Atras.\n");
-    scanf("%i", &op);
-    switch(op){
-case 1:
-    //admin=agregarAdministrador();
-    //cargarArchivoAdmin();
-
-    break;
-case 2:
-    break;
-    }}while(op!=2);
-
 }
 
 ///MENU VIAJES////////////////////////////////////////////////////////////////////////////////////////////////////////////////
