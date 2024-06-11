@@ -68,11 +68,11 @@ int main()
             }else if(opcion==1){
                 empleado=iniciarSesionEmpleado();
                 printf("Bienvenido/a %s.\n", empleado.nYa);
-                    //menuEmpleados();
+                    menuEmpleados();
             }else if(opcion==2){
                 cliente=iniciarSesionCliente();
                 printf("Bienvenido/a %s.\n", cliente.nYa);
-                    //menuClientes();
+                    menuClientes();
             }
             break;
         }
