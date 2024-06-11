@@ -4,8 +4,15 @@
 static const char archEmpleado[] = {"archivoEmpleado.bin"};
 
 typedef struct{
+    int dia;
+    int mes;
+    int anio;
+}stFechaE;
+
+typedef struct{
 char nYa[30];
 char dni[10];
+stFechaE fechaN;
 char contrasenia[30];
 char tel[10];
 int sueldo;
@@ -35,6 +42,9 @@ void modificarEmpleado (char nYa[]);
 
 ///PROTOTIPO ARCHIVOS//////////////////////////////////////////////////////////////////////////////////////////////////////////
 void cargarArchivoEmpleado();
+stEmpleado cargarContraseniaEmpleado(stEmpleado A);
+stEmpleado busquedaEmpleadoInicioSesion (char dni[], char contrasenia[]);
+stEmpleado iniciarSesionEmpleado();
 void encontrarEmpleadoDni(char D[]);
 void encontrarEmpleadoN(char N[]);
 void mostrarArchivoEmpleado();

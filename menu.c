@@ -58,7 +58,7 @@ void menuEmpleados()
 
     case 1:
         {
-            cargarArchivoEmpleado();
+            //cargarArchivoEmpleado();
             system("pause");
             system("cls");
             printf("LISTA DE EMPLEADOS\n\n");

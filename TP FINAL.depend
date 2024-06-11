@@ -540,7 +540,7 @@
 
 1718052985 c:\users\acer\desktop\utn\tp-final-copy\viajes.h
 
-1718072755 source:c:\users\acer\desktop\utn\tp-final-copy\clientes.c
+1718121003 source:c:\users\acer\desktop\utn\tp-final-copy\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -554,7 +554,7 @@
 	<stdio.h>
 	<malloc.h>
 
-1718071537 c:\users\acer\desktop\utn\tp-final-copy\clientes.h
+1718116222 c:\users\acer\desktop\utn\tp-final-copy\clientes.h
 	"viajes.h"
 
 1718052985 c:\users\acer\desktop\utn\tp-final-copy\ordenamientos.h
@@ -563,14 +563,14 @@
 	"viajes.h"
 	"ventas.h"
 
-1718052985 c:\users\acer\desktop\utn\tp-final-copy\empleados.h
+1718119025 c:\users\acer\desktop\utn\tp-final-copy\empleados.h
 
 1718052985 c:\users\acer\desktop\utn\tp-final-copy\ventas.h
 	"viajes.h"
 	"clientes.h"
 	"empleados.h"
 
-1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\empleados.c
+1718121298 source:c:\users\acer\desktop\utn\tp-final-copy\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	"pila.h"
@@ -578,7 +578,7 @@
 	"empleados.h"
 	"ordenamientos.h"
 
-1718062869 source:c:\users\acer\desktop\utn\tp-final-copy\menu.c
+1718118058 source:c:\users\acer\desktop\utn\tp-final-copy\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -591,7 +591,7 @@
 	"ordenamientos.h"
 	"calendario.h"
 
-1718069271 c:\users\acer\desktop\utn\tp-final-copy\admin.h
+1718121044 c:\users\acer\desktop\utn\tp-final-copy\admin.h
 
 1718052985 source:c:\users\acer\desktop\utn\tp-final-copy\ordenamientos.c
 	<stdio.h>
@@ -624,7 +624,7 @@
 	"viajes.h"
 	"ordenamientos.h"
 
-1718071557 source:c:\users\acer\desktop\utn\tp-final-copy\main.c
+1718121003 source:c:\users\acer\desktop\utn\tp-final-copy\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -648,13 +648,14 @@
 	"empleados.h"
 	"admin.h"
 
-1718070960 c:\users\acer\desktop\utn\tp-final-copy\validaciones.h
+1718116222 c:\users\acer\desktop\utn\tp-final-copy\validaciones.h
 
-1718070960 source:c:\users\acer\desktop\utn\tp-final-copy\validaciones.c
+1718117475 source:c:\users\acer\desktop\utn\tp-final-copy\validaciones.c
 	"validaciones.h"
 	"string.h"
 
-1718069303 source:c:\users\acer\desktop\utn\tp-final-copy\admin.c
+1718121298 source:c:\users\acer\desktop\utn\tp-final-copy\admin.c
+	<stdio.h>
 	<stdlib.h>
 	"pila.h"
 	<string.h>

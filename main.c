@@ -57,16 +57,19 @@ int main()
     case 1:
         {
             printf("Ingrese su tipo de usuario:\n");
-            printf("1. Admin\n");
-            printf("2. Empleado\n");
-            printf("3. Cliente\n");
-            printf("4. Salir\n");
+            printf("1. Empleado\n");
+            printf("2. Cliente\n");
+            printf("3. Salir\n");
             scanf("%i", &opcion);
-            if(opcion==1){
-                //admin=iniciarSesionAdmin();
+            if(opcion==-1){
+                admin=iniciarSesionAdmin();
+                printf("Bienvenido/a %s.\n", admin.nYa);
+                    menuAdmin();
+            }else if(opcion==1){
+                empleado=iniciarSesionEmpleado();
+                printf("Bienvenido/a %s.\n", empleado.nYa);
+                    menuEmpleados();
             }else if(opcion==2){
-                //empleado=iniciarSesionEmpleado();
-            }else if(opcion==3){
                 cliente=iniciarSesionCliente();
                 printf("Bienvenido/a %s.\n", cliente.nYa);
                     menuClientes();
@@ -76,19 +79,21 @@ int main()
     case 2:
         {
             printf("Ingrese su tipo de usuario:\n");
-            printf("1. Administrador\n");
-            printf("2. Empleado\n");
-            printf("3. Cliente\n");
-            printf("4. Salir\n");
+            printf("1. Empleado\n");
+            printf("2. Cliente\n");
+            printf("3. Salir\n");
             int option;
             scanf("%i", &option);
             if(option==1){
-                registroAdministrador;
-            }else if(option==3){
+                registrarEmpleado();
+            }else if(option==2){
                 registrarCliente();
             }
             break;
         }
+    default:
+        printf("No existe la opcion.\n");
+        break;
         }}while(op!=4);
 
     return 0;

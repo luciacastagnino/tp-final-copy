@@ -20,3 +20,26 @@ int validacionContrasenia (char contrasenia[], char contrasenia2[]){
     }
     return flag;
 }
+
+int validarDiaFecha(int dia)
+{
+    int flag=0;
+
+    if(dia>=1 && dia<=31)
+    {
+        flag=1;
+    }
+
+    return flag;
+}
+
+int validarMesFecha(int mes)
+{
+    int flag=0;
+
+    if(mes>=1 && mes<=12)
+    {
+        flag=1;
+    }
+    return flag;
+}

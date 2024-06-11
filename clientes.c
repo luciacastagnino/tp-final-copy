@@ -282,7 +282,6 @@ for(i=0; i<validos; i++){
 }
 ///Cargar cliente/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 stCliente cargarContraseniaCliente(stCliente A)
 {
     char contrasenia[30];
@@ -295,10 +294,10 @@ stCliente cargarContraseniaCliente(stCliente A)
 
     while(flag!=1)
     {
-        printf("La contrasenia es muy corta \n");
-        printf("Ingrese su nueva contrasenia:  \n");
+        printf("La contrasenia es muy corta, ingrese una contrasenia mas larga.\n");
         fflush(stdin);
         gets(contrasenia);
+        flag=lenghtContrasenia(contrasenia);
     }
     printf("Vuelva a ingresar su contrasenia \n");
     fflush(stdin);
@@ -309,21 +308,23 @@ stCliente cargarContraseniaCliente(stCliente A)
     validacion=validacionContrasenia(contrasenia, contrasenia2);
 
     while(validacion!=1){
-        printf("Las contrasenias no coinciden\n");
-        printf("Ingrese nuevamente la contrasenia:  \n");
+        printf("Las contrasenias no coinciden, ingrese nuevamente la contrasenia\n");
         fflush(stdin);
         gets(contrasenia);
         printf("Vuelva a ingresar su contrasenia \n");
         fflush(stdin);
         gets(contrasenia2);
+        validacion=validacionContrasenia(contrasenia, contrasenia2);
     }
     strcpy(A.contrasenia, contrasenia);
+
     return A;
 }
 
 stCliente cargarCliente()
 {
     stCliente A;
+    int flag=0, flag1=0;
 
     printf("Ingrese el nombre y apellido del cliente\n");
     fflush(stdin);
@@ -331,9 +332,32 @@ stCliente cargarCliente()
 
     A=cargarContraseniaCliente(A);
 
-    printf("Ingrese su fecha de nacimiento\n");
+    printf("Ingrese el DNI del cliente\n");
     fflush(stdin);
-    gets(A.fechaNac);
+    gets(A.dni);
+
+    printf("Ingrese su fecha de nacimiento:\n");
+
+    while(flag!=1){
+        printf("Dia:");
+        scanf("%d", &A.fechaN.dia);
+        flag=validarDiaFecha(A.fechaN.dia);
+        if(flag!=1){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.fechaN.mes);
+        flag1=validarMesFecha(A.fechaN.mes);
+        if(flag1!=1){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
+    printf("Anio:");
+    scanf("%i", &A.fechaN.anio);
 
     printf("Ingrese el genero del cliente M/F (En mayuscula)\n");
     fflush(stdin);
@@ -344,10 +368,6 @@ stCliente cargarCliente()
         fflush(stdin);
         scanf("%c", &A.genero);
     }
-
-    printf("Ingrese el DNI del cliente\n");
-    fflush(stdin);
-    gets(A.dni);
 
     printf("Ingrese el numero de telefono del cliente\n");
     fflush(stdin);
@@ -386,27 +406,28 @@ int generarIdCliente()
 }*/
 
 void registrarCliente() {
+
+    FILE *buf;
+    buf=fopen(archCliente, "ab");
     stCliente A;
-    FILE *buf= fopen(archCliente, "ab");
 
-    if (!buf) {
-        printf("Error al abrir el archivo de clientes.\n");
-        return;
+    if(buf){
+        A=cargarCliente();
+        fwrite(&A, sizeof(stCliente), 1, buf);
+        fclose(buf);
+        printf("Cliente registrado con exito.\n");
+    }else{
+        printf("No se pudo abrir el archivo.\n");
     }
-
-    A=cargarCliente();
-
-    fwrite(&A, sizeof(stCliente), 1, buf);
-    fclose(buf);
-
-    printf("Cliente registrado con éxito.\n");
 }
 
 stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[])
 {
-    FILE* buf = fopen(archCliente, "rb");
+    FILE* buf;
+    buf=fopen(archCliente, "rb");
     int flag=0;
     stCliente A;
+
     if(buf)
     {
         while(flag != 1 && fread(&A, sizeof(stCliente), 1, buf)>0)
@@ -423,20 +444,17 @@ stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[])
 }
 
 stCliente iniciarSesionCliente() {
+
+    FILE *buf;
+    buf = fopen(archCliente, "rb");
     char dni[10];
     char contrasenia[20];
     char contrasenia2[20];
     stCliente A;
     int flag=0;
 
-    FILE *buf;
-    buf = fopen(archCliente, "rb");
-
-    if (!buf) {
-        printf("Error al abrir el archivo de clientes.\n");
-    }
-
-    while(flag!=1){
+    if(buf){
+        while(flag!=1){
 
         printf("Ingrese el DNI:\n");
         fflush(stdin);
@@ -448,12 +466,16 @@ stCliente iniciarSesionCliente() {
         A=busquedaClienteInicioSesion(dni, contrasenia);
 
         if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
-        printf("Inicio de sesion exitoso.\n");
-        flag=1;
+            printf("Inicio de sesion exitoso.\n");
+            flag=1;
         }else{
-        printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
+            printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
         }
 
+    }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
     }
 
     return A;
@@ -464,7 +486,7 @@ stCliente iniciarSesionCliente() {
 void mostrarCliente(stCliente A)
 {
     printf("Nombre y Apellido: %s\n", A.nYa);
-    printf("Fecha de nacimiento: %s\n", A.fechaNac);
+    printf("Fecha de nacimiento: %i/%i/%i\n", A.fechaN.dia, A.fechaN.mes, A.fechaN.anio);
     printf("Genero: %c\n", A.genero);
     printf("DNI: %s\n", A.dni);
     printf("Telefono: %s\n", A.tel);
@@ -610,9 +632,29 @@ stCliente modificarNyAC(stCliente A)
 
 stCliente modificarFechaNacC(stCliente A)
 {
-    printf("Ingrese la nueva fecha de nacimiento:\n");
-    fflush(stdin);
-    gets(A.fechaNac);
+    int flag=0, flag1=0;
+
+    while(flag!=1){
+        printf("Ingrese su fecha de nacimiento para modificar la anterior:\n");
+        printf("Dia:");
+        scanf("%d", &A.fechaN.dia);
+        flag=validarDiaFecha(A.fechaN.dia);
+        if(flag==0){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.fechaN.mes);
+        flag1=validarMesFecha(A.fechaN.mes);
+        if(flag1==0){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
+    printf("Anio:");
+    scanf("%i", &A.fechaN.anio);
 
     return A;
 }

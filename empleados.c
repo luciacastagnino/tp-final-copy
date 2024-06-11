@@ -273,18 +273,85 @@ void mostrarArregloEmpleadosRecursiva(stEmpleado A[], int validos, int i){
 
 
 ///Cargar Empleado//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-stEmpleado cargarEmpleado()
-{
+
+stEmpleado cargarContraseniaEmpleado(stEmpleado A){
+    char contrasenia[30];
+    char contrasenia2[30];
+    int flag=0;
+    printf("Ingrese su contrasenia:  \n");
+    fflush(stdin);
+    gets(contrasenia);
+    flag=lenghtContrasenia(contrasenia);
+
+    while(flag!=1)
+    {
+        printf("La contrasenia es muy corta, ingrese una contrasenia mas larga.\n");
+        fflush(stdin);
+        gets(contrasenia);
+        flag=lenghtContrasenia(contrasenia);
+
+    }
+    printf("Vuelva a ingresar su contrasenia \n");
+    fflush(stdin);
+    gets(contrasenia2);
+
+    int validacion=0;
+
+    validacion=validacionContrasenia(contrasenia, contrasenia2);
+
+    while(validacion!=1){
+        printf("Las contrasenias no coinciden, ingrese nuevamente la contrasenia\n");
+        fflush(stdin);
+        gets(contrasenia);
+        printf("Vuelva a ingresar su contrasenia \n");
+        fflush(stdin);
+        gets(contrasenia2);
+        validacion=validacionContrasenia(contrasenia, contrasenia2);
+    }
+    strcpy(A.contrasenia, contrasenia);
+
+    return A;
+}
+
+stEmpleado cargarEmpleado(){
 
     stEmpleado A;
 
-    printf("Ingrese su nombre y apellido:\n");
+    int flag=0, flag1=0;
+
+    printf("Ingrese el nombre y apellido del empleado\n");
     fflush(stdin);
     gets(A.nYa);
 
-    printf("Ingrese su DNI:\n");
+    A=cargarContraseniaEmpleado(A);
+
+
+    printf("Ingrese su DNI.\n");
     fflush(stdin);
     gets(A.dni);
+
+    printf("Ingrese su fecha de nacimiento:\n");
+
+    while(flag!=1){
+        printf("Dia:");
+        scanf("%d", &A.fechaN.dia);
+        flag=validarDiaFecha(A.fechaN.dia);
+        if(flag!=1){
+            printf("Dia invalido. Vuelva a ingresar una fecha valida.\n");
+        }
+    }
+
+    while(flag1!=1){
+        printf("Mes:");
+        scanf("%d", &A.fechaN.mes);
+        flag1=validarMesFecha(A.fechaN.mes);
+        if(flag1!=1){
+            printf("Mes invalido. Vuelva a ingresar un mes valido.\n");
+        }
+    }
+
+    printf("Anio:");
+    scanf("%i", &A.fechaN.anio);
 
     printf("Ingrese su numero de telefono:\n");
     fflush(stdin);
@@ -304,33 +371,82 @@ stEmpleado cargarEmpleado()
 }
 
 
-void cargarArchivoEmpleado()
-{
+void registrarEmpleado(){
+
+    FILE *buf;
+    buf=fopen(archEmpleado, "ab");
     stEmpleado A;
-    char control = 's';
 
-    FILE* buff;
-    buff = fopen(archEmpleado, "ab");
-
-    if(buff)
-    {
-        while(control == 's')
-        {
-            A = cargarEmpleado();
-
-            fwrite(&A, sizeof(stEmpleado), 1, buff);
-
-            printf("¿Quiere seguir cargando empleados?\n");
-            fflush(stdin);
-            scanf("%c", &control);
-        }
-        fclose(buff);
-    }
-    else
-    {
-        printf("El archivo no pudo abrirse\n");
+    if(buf){
+        A=cargarEmpleado();
+        fwrite(&A, sizeof(stEmpleado), 1, buf);
+        fclose(buf);
+        printf("Empleado registrado con exito.\n");
+    }else{
+        printf("No se pudo abrir el archivo.\n");
     }
 }
+
+stEmpleado busquedaEmpleadoInicioSesion (char dni[], char contrasenia[]){
+
+    FILE* buf;
+    buf=fopen(archEmpleado, "rb");
+    stEmpleado A;
+    int flag=0;
+
+    if(buf)
+    {
+        while(flag != 1 && fread(&A, sizeof(stEmpleado), 1, buf)>0)
+        {
+            if(strcmpi(A.dni, dni)==0 && strcmp(A.contrasenia, contrasenia)==0)
+            {
+                flag=1;
+            }
+        }
+        fclose(buf);
+    }
+
+    return A;
+}
+
+stEmpleado iniciarSesionEmpleado(){
+
+    FILE *buf;
+    buf = fopen(archEmpleado, "rb");
+    stEmpleado A;
+    char dni[10];
+    char contrasenia[20];
+    char contrasenia2[20];
+    int flag=0;
+
+    if(buf){
+        while(flag!=1){
+
+        printf("Ingrese el DNI:\n");
+        fflush(stdin);
+        gets(dni);
+
+        printf("Ingrese contrasenia:\n");
+        fflush(stdin);
+        gets(contrasenia);
+        A=busquedaEmpleadoInicioSesion(dni, contrasenia);
+
+        if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
+            printf("Inicio de sesion exitoso.\n");
+            flag=1;
+        }else{
+            printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
+        }
+
+    }
+        fclose(buf);
+    }else{
+        printf("No se pudo abrir el archivo.\n");
+    }
+
+    return A;
+}
+
 
 ///Mostrar Empleado/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 void mostrarEmpleado (stEmpleado A)

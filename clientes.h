@@ -5,6 +5,13 @@
 static const char archCliente[] = {"archivoCliente.bin"};
 
 typedef struct{
+    int dia;
+    int mes;
+    int anio;
+}stFecha;
+
+
+typedef struct{
 char calle[20];
 int num;
 char localidad[20];
@@ -13,7 +20,7 @@ char localidad[20];
 typedef struct{
 char nYa[30];
 char contrasenia[30];
-char fechaNac[15];
+stFecha fechaN;
 char genero;
 char dni[10];
 char tel[10];

@@ -7,9 +7,8 @@ static const char archAdmin[] = {"archivoAdmin.bin"};
 // ESTRUCTURA ADMIN
 
 typedef struct{
-    int id;
     char nYa[50];
-    char DNI[10];
+    char dni[10];
     char contrasenia[30];
     int estado;
 }stAdmin;
