@@ -67,14 +67,10 @@ int main()
             }else if(opcion==2){
                 //empleado=iniciarSesionEmpleado();
             }else if(opcion==3){
-                int inicioSesion=iniciarSesionCliente();
-                if(inicioSesion==1){
-                    printf("Bienvenido/a %s.\n", empleado.nYa);
+                cliente=iniciarSesionCliente();
+                printf("Bienvenido/a %s.\n", cliente.nYa);
                     menuClientes();
-                }
-
             }
-
             break;
         }
     case 2:

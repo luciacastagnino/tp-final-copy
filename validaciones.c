@@ -1,13 +1,15 @@
 #include "validaciones.h"
+#include "string.h"
 
 // validacion inicio sesion/registro
 
-void lenghtContrasenia(char contrasenia){
+int lenghtContrasenia(char contrasenia[]){
 
-    if(srtlen(contrasenia)<8){
-        return 0;
+    int flag=0;
+    if(strlen(contrasenia)>8){
+        flag=1;
     }
-    return 1;
+    return flag;
 }
 
 int validacionContrasenia (char contrasenia[], char contrasenia2[]){

@@ -1,6 +1,7 @@
 #ifndef ADMIN_H_INCLUDED
 #define ADMIN_H_INCLUDED
 
+
 static const char archAdmin[] = {"archivoAdmin.bin"};
 
 // ESTRUCTURA ADMIN

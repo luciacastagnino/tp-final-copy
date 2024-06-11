@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include "pila.h"
 #include <string.h>
@@ -149,3 +149,4 @@ void mostrarAdmin (stAdmin A)
     printf("DNI: %s.\n", A.dni);
     printf("\n");
 }
+*/

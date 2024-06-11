@@ -7,7 +7,6 @@
 #include "ordenamientos.h"
 #include "validaciones.h"
 
-
 ///CLIENTE ORDEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void mostrarOrdenAlfabCActivo()
@@ -283,6 +282,45 @@ for(i=0; i<validos; i++){
 }
 ///Cargar cliente/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+stCliente cargarContraseniaCliente(stCliente A)
+{
+    char contrasenia[30];
+    char contrasenia2[30];
+    int flag=0;
+    printf("Ingrese su contrasenia:  \n");
+    fflush(stdin);
+    gets(contrasenia);
+    flag=lenghtContrasenia(contrasenia);
+
+    while(flag!=1)
+    {
+        printf("La contrasenia es muy corta \n");
+        printf("Ingrese su nueva contrasenia:  \n");
+        fflush(stdin);
+        gets(contrasenia);
+    }
+    printf("Vuelva a ingresar su contrasenia \n");
+    fflush(stdin);
+    gets(contrasenia2);
+
+    int validacion=0;
+
+    validacion=validacionContrasenia(contrasenia, contrasenia2);
+
+    while(validacion!=1){
+        printf("Las contrasenias no coinciden\n");
+        printf("Ingrese nuevamente la contrasenia:  \n");
+        fflush(stdin);
+        gets(contrasenia);
+        printf("Vuelva a ingresar su contrasenia \n");
+        fflush(stdin);
+        gets(contrasenia2);
+    }
+    strcpy(A.contrasenia, contrasenia);
+    return A;
+}
+
 stCliente cargarCliente()
 {
     stCliente A;
@@ -291,12 +329,9 @@ stCliente cargarCliente()
     fflush(stdin);
     gets(A.nYa);
 
-    printf("Ingrese la contrasenia:\n");
-    fflush(stdin);
-    gets(A.contrasenia);
+    A=cargarContraseniaCliente(A);
 
-
-    printf("Ingrese la fecha de nacimiento del cliente\n");
+    printf("Ingrese su fecha de nacimiento\n");
     fflush(stdin);
     gets(A.fechaNac);
 
@@ -374,7 +409,7 @@ stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[])
     stCliente A;
     if(buf)
     {
-        while(flag == 0 && fread(&A, sizeof(stCliente), 1, buf)>0)
+        while(flag != 1 && fread(&A, sizeof(stCliente), 1, buf)>0)
         {
             if(strcmpi(A.dni, dni)==0 && strcmp(A.contrasenia, contrasenia)==0)
             {
@@ -383,19 +418,17 @@ stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[])
         }
         fclose(buf);
     }
-    if(flag==0)
-    {
-        A.estado = 0;
-    }
+
     return A;
 }
 
-int iniciarSesionCliente() {
+stCliente iniciarSesionCliente() {
     char dni[10];
     char contrasenia[20];
     char contrasenia2[20];
     stCliente A;
-    int flag=0, validacion=0;
+    int flag=0;
+
     FILE *buf;
     buf = fopen(archCliente, "rb");
 
@@ -403,31 +436,27 @@ int iniciarSesionCliente() {
         printf("Error al abrir el archivo de clientes.\n");
     }
 
-    printf("Ingrese el DNI:\n");
-    fflush(stdin);
-    gets(A.dni);
-    printf("Ingrese contrasenia:\n");
-    fflush(stdin);
-    gets(A.contrasenia);
-    printf("Vuelva a ingresar la contrasenia:\n");
-    validacion=validacionContrasenia(contrasenia, contrasenia2);
-    while(validacion!=1){
-        if(validacion==0){
-        printf("Contrasenia incorrecta, vuelva a ingresarla.\n");
-    }
-    }
+    while(flag!=1){
 
-    A=busquedaClienteInicioSesion(dni, contrasenia);
+        printf("Ingrese el DNI:\n");
+        fflush(stdin);
+        gets(dni);
 
-    if(A.dni!=0){
+        printf("Ingrese contrasenia:\n");
+        fflush(stdin);
+        gets(contrasenia);
+        A=busquedaClienteInicioSesion(dni, contrasenia);
+
+        if((strcmp(A.dni, dni)==0) && strcmp(A.contrasenia, contrasenia)==0){
         printf("Inicio de sesion exitoso.\n");
         flag=1;
-
-    }else{
+        }else{
         printf("Dni o contrasenia incorrectos. Vuelva a iniciar sesion.\n");
+        }
+
     }
 
-    return flag;
+    return A;
 }
 
 ///Mostrar Cliente///////////////////////////////////////////////////////////////////////////////////////////////////////////

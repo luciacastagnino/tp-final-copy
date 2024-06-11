@@ -53,12 +53,13 @@ stCliente darBajaC(stCliente aux);
 stDomicilio cargarDomicilio();
 void mostrarDomicilio(stDomicilio A);
 stDomicilio modificarDomicilio(stDomicilio A);
+stCliente cargarContraseniaCliente(stCliente A);
 
 ///PROTOTIPOS ARCHIVOS/////////////////////////////////////////////////////////////////////////////////////////////////////////
 int generarIdCliente();
 void registrarCliente();
 stCliente busquedaClienteInicioSesion (char dni[], char contrasenia[]);
-int iniciarSesionCliente();
+stCliente iniciarSesionCliente();
 void encontrarClienteN(char N[30]);
 void encontrarClienteDni(char D[10]);
 void MostrarArregloCliente(stCliente A[], int validos);
